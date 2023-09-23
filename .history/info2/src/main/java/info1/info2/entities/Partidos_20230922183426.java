@@ -1,9 +1,7 @@
 package info1.info2.entities;
 
 import javax.persistence.*;
-
 import java.time.LocalDate;
-import jakarta.validation.constraints.*;
 @Entity
 @Table(name = "partidos")
 public class Partidos {
@@ -23,14 +21,13 @@ public class Partidos {
     @JoinColumn(name = "equipo_visitante_id")
     private Equipos visitante;
 
-    
-     @FutureOrPresent(message = "La fecha del partido debe ser en el presente o en el futuro")
+    @Column(name = "fecha")
     private LocalDate fecha;
- 
-    @NotBlank(message = "El estadio es obligatorio")
+
+    @Column(name = "estadio")
     private String estadio;
 
-    @NotBlank(message = "El árbitro principal es obligatorio")
+    @Column(name = "arbitro_principal")
     private String arbitroPrincipal;
 
     public Long getId() {

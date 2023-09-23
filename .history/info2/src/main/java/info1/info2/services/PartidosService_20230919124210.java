@@ -1,5 +1,8 @@
 package info1.info2.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import info1.info2.entities.Partidos;
 import info1.info2.repository.PartidosRepository;
 
@@ -11,6 +14,7 @@ import java.util.Optional;
 public class PartidosService {
     private final PartidosRepository partidoRepository;
 
+    @Autowired
     public PartidosService(PartidosRepository partidoRepository) {
         this.partidoRepository = partidoRepository;
     }

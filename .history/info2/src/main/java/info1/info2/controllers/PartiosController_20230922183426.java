@@ -1,5 +1,6 @@
 package info1.info2.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class PartiosController {
     private final PartidosService partidoService;
     private final PartiosMapper partidosMapper; // Inyecta el mapper
 
-    
+    @Autowired
     public PartiosController(PartidosService partidoService, PartiosMapper partidosMapper) {
         this.partidoService = partidoService;
         this.partidosMapper = partidosMapper; // Asigna el mapper

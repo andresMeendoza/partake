@@ -1,6 +1,6 @@
 package info1.info2.controllers;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class EquiposController {
     private final EquipoService equipoService;
     private final EquiposMapper equiposMapper; 
 
-   
+    @Autowired
     public EquiposController(EquipoService equipoService, EquiposMapper equiposMapper) {
         this.equipoService = equipoService;
         this.equiposMapper = equiposMapper; 

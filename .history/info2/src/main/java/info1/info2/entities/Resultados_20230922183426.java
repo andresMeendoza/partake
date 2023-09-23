@@ -2,8 +2,6 @@ package info1.info2.entities;
 
 import javax.persistence.*;
 
-import jakarta.validation.constraints.Min;
-
 @Entity
 @Table(name = "resultados")
 public class Resultados {
@@ -11,16 +9,16 @@ public class Resultados {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Min(value = 0, message = "El número de goles visitantes no puede ser negativo")
+    @Column(name = "gol_visitante")
     private Integer golVisitante;
 
-    @Min(value = 0, message = "El número de goles locales no puede ser negativo")
+    @Column(name = "gol_local")
     private Integer golLocal;
 
-    @Min(value = 0, message = "El número de tarjetas rojas no puede ser negativo")
+    @Column(name = "nro_tarjeta_roja")
     private Integer nroTarjetaRoja;
 
-    @Min(value = 0, message = "El número de tarjetas amarillas no puede ser negativo")
+    @Column(name = "nro_tarjeta_amarilla")
     private Integer nroTarjetaAmarilla;
 
     // Getter para el atributo id

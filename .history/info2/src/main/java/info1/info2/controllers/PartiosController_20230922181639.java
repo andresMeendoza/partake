@@ -1,12 +1,13 @@
 package info1.info2.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import info1.info2.dtos.PartidosDTO;
+import info1.info2.dto.PartidosDTO; // Importa los DTO
 import info1.info2.entities.Partidos;
 import info1.info2.services.PartidosService;
-import info1.info2.mappers.PartiosMapper; // Importa el mapper
+import info1.info2.mappers.PartidosMapper; // Importa el mapper
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,10 +18,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/partidos")
 public class PartiosController {
     private final PartidosService partidoService;
-    private final PartiosMapper partidosMapper; // Inyecta el mapper
+    private final PartidosMapper partidosMapper; // Inyecta el mapper
 
-    
-    public PartiosController(PartidosService partidoService, PartiosMapper partidosMapper) {
+    @Autowired
+    public PartiosController(PartidosService partidoService, PartidosMapper partidosMapper) {
         this.partidoService = partidoService;
         this.partidosMapper = partidosMapper; // Asigna el mapper
     }

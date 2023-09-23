@@ -1,4 +1,6 @@
 package info1.info2.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import info1.info2.entities.Resultados;
@@ -12,7 +14,7 @@ public class ResultadosServic {
     private final ResultadosRepository resultadoRepository;
 
 
-    
+    @Autowired
     public ResultadosServic(ResultadosRepository resultadoRepository) {
         this.resultadoRepository = resultadoRepository;
     }

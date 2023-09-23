@@ -1,4 +1,6 @@
 package info1.info2.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +20,7 @@ public class ResultadosController {
     private final ResultadosServic resultadoService;
     private final ResultadosMapper resultadosMapper; // Inyecta el mapper
 
-   
+    @Autowired
     public ResultadosController(ResultadosServic resultadoService, ResultadosMapper resultadosMapper) {
         this.resultadoService = resultadoService;
         this.resultadosMapper = resultadosMapper; // Asigna el mapper

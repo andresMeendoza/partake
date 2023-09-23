@@ -2,8 +2,10 @@ package info1.info2.entities;
 
 import javax.persistence.*;
 
+import jakarta.validation.constraints.FutureOrPresent;
+jakarta.validation.constraints.*;
 import java.time.LocalDate;
-import jakarta.validation.constraints.*;
+jakarta.validation.constraints.*;
 @Entity
 @Table(name = "partidos")
 public class Partidos {
@@ -30,7 +32,7 @@ public class Partidos {
     @NotBlank(message = "El estadio es obligatorio")
     private String estadio;
 
-    @NotBlank(message = "El árbitro principal es obligatorio")
+    @Column(name = "arbitro_principal")
     private String arbitroPrincipal;
 
     public Long getId() {

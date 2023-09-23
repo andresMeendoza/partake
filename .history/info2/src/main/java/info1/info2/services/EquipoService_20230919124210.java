@@ -1,6 +1,6 @@
 package info1.info2.services;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import info1.info2.entities.Equipos;
@@ -13,7 +13,7 @@ import java.util.Optional;
 public class EquipoService {
     private final EquiposRepository equipoRepository;
 
-  
+    @Autowired
     public EquipoService(EquiposRepository equipoRepository) {
         this.equipoRepository = equipoRepository;
     }

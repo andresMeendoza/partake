@@ -1,12 +1,16 @@
 package info1.info2.entities;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import jakarta.validation.constraints.*;
+import javax.persistence.*;
+import javax.validation.Constraint.*;
 
 
 @Entity
@@ -26,7 +30,7 @@ public class Equipos {
 
     @NotBlank(message = "El director técnico es obligatorio")
     private String directorTecnico;
-   @OneToMany(mappedBy = "local")
+    @OneToMany(mappedBy = "local")
     private List<Partidos> partidosLocal;
 
     @OneToMany(mappedBy = "visitante")
